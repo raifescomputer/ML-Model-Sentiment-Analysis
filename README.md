@@ -26,84 +26,21 @@ The model is trained and evaluated on the [IMDB Movie Reviews dataset](https://w
 The dataset file `IMDB Dataset.csv` should be placed in the `data/` directory.
 
 ## Dependencies
-
 - Python 3.x
 - NumPy
 - Pandas
 - Scikit-learn
 
-## Install the required dependencies using pip:
-
-```bash
-pip install -r requirements.txt
-Installation
-Clone the repository:
-
-Bash
-
-1. git clone [https://github.com/yourusername/ML-Model-Sentiment-Analysis.git](https://github.com/yourusername/ML-Model-Sentiment-Analysis.git)
-cd ML-Model-Sentiment-Analysis
-(Optional) Create a virtual environment:
-
-Bash
-
-2. python -m venv venv
-source venv/bin/activate  # On macOS/Linux
-venv\Scripts\activate  # On Windows
-Install dependencies:
-
-Bash
-
-3. pip install -r requirements.txt
-Place the IMDB Dataset.csv file in the data/ directory.
-
-4. Place the IMDB Dataset.csv file in the data/ directory.
-
-Usage
-To run the sentiment analysis script:
-
-Bash
-
-python sentiment_model.py
-This will train the model, evaluate its performance, and print the results, including:
-
-Cross-validation scores
-Accuracy on the test set
-Classification report (precision, recall, F1-score)
-Confusion matrix
-Prediction for a new review
-Model Training
-The model is trained using the Multinomial Naive Bayes algorithm. Text preprocessing includes:
-
-TF-IDF vectorization
-Stop word removal
-The dataset is split into training and testing sets with an 80/20 ratio.
-
 ## Evaluation
 The model's performance is evaluated using:
 
-## Accuracy
+Accuracy
 Classification report (precision, recall, F1-score)
 Confusion matrix
 Cross-validation (5-fold)
 The cross-validation scores and test set accuracy should be around 86-87%.
 
-## Model Persistence
-To save the trained model:
-
-Python
-
-import joblib
-joblib.dump(model, 'sentiment_model.joblib')
-To load the saved model:
-
-Python
-
-import joblib
-loaded_model = joblib.load('sentiment_model.joblib')
-Contributing
-Contributions are welcome! Please feel free to submit a pull request or open an issue.
-
 ## License
-This project is licensed under the MIT License.   
+This project is licensed under the MIT License. 
+
 
