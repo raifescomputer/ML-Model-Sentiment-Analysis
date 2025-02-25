@@ -6,8 +6,8 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 
-# 1. Load your dataset
-df = pd.read_csv('data/IMDB Dataset.csv')
+# 1. Load dataset
+df = pd.read_csv('data/IMDB_Dataset.csv')
 
 # 2. Text Preprocessing and Vectorization
 stop_words_list = list(ENGLISH_STOP_WORDS)
@@ -22,6 +22,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 model = MultinomialNB()
 model.fit(X_train, y_train)
 
+# Add cross-validation
+from sklearn.model_selection import cross_val_score
+scores = cross_val_score(model, X, y, cv=5)  # 5-fold cross-validation
+print(f"Cross-validation scores: {scores}")
+print(f"Average cross-validation score: {scores.mean()}")
+
 # 5. Make predictions on the test set
 y_pred = model.predict(X_test)
 
@@ -29,7 +35,13 @@ y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {accuracy}")
 
-# 7. Example of making a prediction on new data.
+from sklearn.metrics import classification_report
+print(classification_report(y_test, y_pred))
+
+from sklearn.metrics import confusion_matrix
+print(confusion_matrix(y_test, y_pred))
+
+# Example of making a prediction on new data.
 new_review = ["The movie was okay."]
 new_review_vectorized = vectorizer.transform(new_review)
 prediction = model.predict(new_review_vectorized)
