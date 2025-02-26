@@ -31,6 +31,47 @@ The dataset file `IMDB Dataset.csv` should be placed in the `data/` directory.
 - Pandas
 - Scikit-learn
 
+## Installation
+Clone the repository:
+
+Bash
+
+git clone [https://github.com/yourusername/ML-Model-Sentiment-Analysis.git](https://github.com/yourusername/ML-Model-Sentiment-Analysis.git)
+cd ML-Model-Sentiment-Analysis
+(Optional) Create a virtual environment:
+
+Bash
+
+python -m venv venv
+source venv/bin/activate  # On macOS/Linux
+venv\Scripts\activate  # On Windows
+Install dependencies:
+
+Bash
+
+pip install -r requirements.txt
+Place the IMDB Dataset.csv file in the data/ directory.
+
+## Usage 
+To run the sentiment analysis script:
+
+Bash
+
+python sentiment_model.py
+This will train the model, evaluate its performance, and print the results, including:
+
+Cross-validation scores
+Accuracy on the test set
+Classification report (precision, recall, F1-score)
+Confusion matrix
+Prediction for a new review
+
+## Model Training
+The model is trained using the Multinomial Naive Bayes algorithm. Text preprocessing includes:
+
+TF-IDF vectorization
+Stop word removal
+
 ## Evaluation
 The model's performance is evaluated using:
 
@@ -39,6 +80,22 @@ Classification report (precision, recall, F1-score)
 Confusion matrix
 Cross-validation (5-fold)
 The cross-validation scores and test set accuracy should be around 86-87%.
+
+## Model Persistence
+To save the trained model:
+
+Python
+import joblib
+joblib.dump(model, 'sentiment_model.joblib')
+To load the saved model:
+
+Python
+import joblib
+loaded_model = joblib.load('sentiment_model.joblib')
+
+
+## Contributing
+Contributions are welcome! Please feel free to submit a pull request or open an issue.
 
 ## License
 This project is licensed under the MIT License. 
