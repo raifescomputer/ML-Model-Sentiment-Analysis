@@ -36,7 +36,7 @@ Clone the repository:
 
 Bash
 
-\ git clone [https://github.com/raifescomputer/ML-Model-Sentiment-Analysis.git](https://github.com/raifescomputer/ML-Model-Sentiment-Analysis.git)
+git clone [https://github.com/raifescomputer/ML-Model-Sentiment-Analysis.git](https://github.com/raifescomputer/ML-Model-Sentiment-Analysis.git)
 cd ML-Model-Sentiment-Analysis
 (Optional) Create a virtual environment:
 
