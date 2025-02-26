@@ -34,30 +34,22 @@ The dataset file `IMDB Dataset.csv` should be placed in the `data/` directory.
 ## Installation
 Clone the repository:
 
-Bash
-
-git clone [https://github.com/raifescomputer/ML-Model-Sentiment-Analysis.git](https://github.com/raifescomputer/ML-Model-Sentiment-Analysis.git)
+`git clone [https://github.com/raifescomputer/ML-Model-Sentiment-Analysis.git](https://github.com/raifescomputer/ML-Model-Sentiment-Analysis.git)
 cd ML-Model-Sentiment-Analysis
-(Optional) Create a virtual environment:
+(Optional) Create a virtual environment:`
 
-Bash
-
-python -m venv venv
+`python -m venv venv
 source venv/bin/activate  # On macOS/Linux
 venv\Scripts\activate  # On Windows
-Install dependencies:
+Install dependencies:`
 
-Bash
-
-pip install -r requirements.txt
-Place the IMDB Dataset.csv file in the data/ directory.
+`pip install -r requirements.txt
+Place the IMDB Dataset.csv file in the data/ directory.`
 
 ## Usage 
 To run the sentiment analysis script:
 
-Bash
-
-python sentiment_model.py
+`python sentiment_model.py`
 This will train the model, evaluate its performance, and print the results, including:
 
 Cross-validation scores
@@ -85,13 +77,13 @@ The cross-validation scores and test set accuracy should be around 86-87%.
 To save the trained model:
 
 Python
-import joblib
+`import joblib
 joblib.dump(model, 'sentiment_model.joblib')
-To load the saved model:
+To load the saved model:`
 
 Python
-import joblib
-loaded_model = joblib.load('sentiment_model.joblib')
+`import joblib
+loaded_model = joblib.load('sentiment_model.joblib')`
 
 
 ## Contributing
